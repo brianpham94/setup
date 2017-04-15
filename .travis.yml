@@ -7,5 +7,4 @@ notifications:
     on_failure: always
 language: node_js
 script:
-  python thisshouldfail.py
-  #echo Hello, this is a test message!
+  echo Hello, this is a test message!
