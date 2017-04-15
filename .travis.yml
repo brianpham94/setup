@@ -1,3 +1,5 @@
 notifications:
-    email: true
+  email: true
 language: node_js
+before_install:
+  - touch test.js
