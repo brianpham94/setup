@@ -1,8 +1,10 @@
 notifications:
   slack:
     rooms:
-      #- cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu#pre-assignment
-      - cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu
+      - cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu#pre-assignment
+      - cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu#testing
+      on_success: change
+      on_failure: always
 language: node_js
 script:
   echo Hello, this is a test message!
