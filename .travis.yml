@@ -8,4 +8,4 @@ notifications:
 language: node_js
 script:
   #echo Hello, this is a test message!
-  python poop.py
+  python thisshouldfail.py
