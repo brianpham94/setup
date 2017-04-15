@@ -14,9 +14,10 @@ notifications:
 
 language: node_js
 node_js:
+  "node"
 
 before_script:
-  - npm install -g n
+  #- npm install -g n
   - npm install -g firebase-tools
 
 script: echo Hello, this is a test message!
