@@ -8,13 +8,18 @@ notifications:
     on_failure: always
 
 language: node_js
+
 node_js:
+  # Specifying the latest Node.js version.
   "node"
 
 before_script:
+  - npm install -g gulp
   - npm install -g firebase-tools
 
-script: echo Hello, this is a test message!
+script:
+  #gulp
+  echo Hello, this is a test message!
 
 after_success:
   - firebase deploy --project alpha-team-84c76 --token=${FIREBASE_API_TOKEN}
