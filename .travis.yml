@@ -1,8 +1,8 @@
 notifications:
   slack:
     rooms:
+      - cse112-alphateam:bjfz7Qlh7uNaWemWc2Khf6wS#pre-assignment
       - cse112-alphateam:bjfz7Qlh7uNaWemWc2Khf6wS#testing
-      - cse112-alphateam:bjfz7Qlh7uNaWemWc2Khf6wS#pre-assingment
       on_success: change
       on_failure: always
 language: node_js
