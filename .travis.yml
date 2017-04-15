@@ -2,7 +2,7 @@ notifications:
   slack:
     rooms:
       #- cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu#pre-assignment
-      - cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu#nickmcdonald
+      - cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu@nickmcdonald
 language: node_js
 script:
   echo Hello, this is a test message!
