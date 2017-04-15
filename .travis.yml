@@ -1,8 +1,8 @@
-deploy:
-  provider: firebase
-  token:
-    secure: "Ahlq9IDn5Smrc2qdSVXQ4A73f8H3swU3NL07h419IzGgDP3xzA24aRzuEbr98j9j8zOW39ZrGKrtyfljvU6kXtBS5me3fLI4Whra1XoQXUyICgWbUyFCQHUPo6z0R82y35oUrDmiYjkL4KMSF0kEtHc9d5eFHSB/4faasGN25MPSBL4Nc2Gq65sYAA4RiFyvhBJgUz2uqEUJeuBKy9+bC+hO/+LTJZiW2gxLz0uRbPGS7Cm9hFNOe99qEou+LxPkdIZ5X901YJ1jvFGMTvQUs3FsRZDBPwyJdpJclgDXxHbNgVIpAYK8VZNa2ZpClKAD708D9PvO63L6nh/TtOMpm/qde0eNJXZVxNAnr6KMqW4V1zZlNsNS62wYgYJAFrY/1gwYfD0ZYBIyKG7zzipMsdzMiiUT/7FY5pqnXj36QdXrps2wmT+7+5pd3uUgMxZjD6c1tO4Sj9Ct3Z5jxF94NEfQ0B5qf0vmqmnUJXNM8b5Ays+Q5BUcotVP0BpnJ61tgOJ5kDHJGDKPWpU84Fgi5ljQtoOkb47RYFX1wKgR8z5o6Yw9aRf7xpwhWNcrPM1blbi8DKXt35f1tTbmLIsorLkWw2IQlpcBt0yAKMsAizsuSdgklONFjJqlHf8jNUlf8baHgqBhRDTssVrLfEg3bL4cRqQBArv64acumIBxuU4="
-  project: alpha-team-84c76
+# deploy:
+#   provider: firebase
+#   token:
+#     secure: "Ahlq9IDn5Smrc2qdSVXQ4A73f8H3swU3NL07h419IzGgDP3xzA24aRzuEbr98j9j8zOW39ZrGKrtyfljvU6kXtBS5me3fLI4Whra1XoQXUyICgWbUyFCQHUPo6z0R82y35oUrDmiYjkL4KMSF0kEtHc9d5eFHSB/4faasGN25MPSBL4Nc2Gq65sYAA4RiFyvhBJgUz2uqEUJeuBKy9+bC+hO/+LTJZiW2gxLz0uRbPGS7Cm9hFNOe99qEou+LxPkdIZ5X901YJ1jvFGMTvQUs3FsRZDBPwyJdpJclgDXxHbNgVIpAYK8VZNa2ZpClKAD708D9PvO63L6nh/TtOMpm/qde0eNJXZVxNAnr6KMqW4V1zZlNsNS62wYgYJAFrY/1gwYfD0ZYBIyKG7zzipMsdzMiiUT/7FY5pqnXj36QdXrps2wmT+7+5pd3uUgMxZjD6c1tO4Sj9Ct3Z5jxF94NEfQ0B5qf0vmqmnUJXNM8b5Ays+Q5BUcotVP0BpnJ61tgOJ5kDHJGDKPWpU84Fgi5ljQtoOkb47RYFX1wKgR8z5o6Yw9aRf7xpwhWNcrPM1blbi8DKXt35f1tTbmLIsorLkWw2IQlpcBt0yAKMsAizsuSdgklONFjJqlHf8jNUlf8baHgqBhRDTssVrLfEg3bL4cRqQBArv64acumIBxuU4="
+#   project: alpha-team-84c76
 notifications:
   email: false
   slack:
@@ -11,5 +11,13 @@ notifications:
     - cse112-alphateam:bjfz7Qlh7uNaWemWc2Khf6wS#testing
     on_success: change
     on_failure: always
+    
 language: node_js
+
+before_script:
+  - npm install -g firebase-tools
+
 script: echo Hello, this is a test message!
+
+after_success:
+  - firebase deploy --token=${FIREBASE_API_TOKEN}
