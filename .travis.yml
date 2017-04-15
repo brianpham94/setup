@@ -1,4 +1,5 @@
 notifications:
+  email: false
   slack:
     rooms:
       - cse112-alphateam:bjfz7Qlh7uNaWemWc2Khf6wS#pre-assignment
