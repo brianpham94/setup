@@ -1,5 +1,8 @@
 notifications:
-  email: true
+  slack:
+    rooms:
+      - cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu#pre-assignment
+      - cse112-alphateam:oDWxEMH5vTr1UcSESRiLowgu#testing
 language: node_js
 before_install:
   - touch test.js
