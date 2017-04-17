@@ -2,21 +2,46 @@
 var gulp = require('gulp');
 
 // Include Our Plugins
-//var jshint = require('gulp-jshint');
-//var sass = require('gulp-sass');
-//var concat = require('gulp-concat');
-//var uglify = require('gulp-uglify');
-//var rename = require('gulp-rename');
 var jasmine = require('gulp-jasmine');
+var gutil = require('gulp-util');
+var jshint = require('gulp-jshint');
 
-/* Lint Task
-gulp.task('lint', function() {
-    return gulp.src('js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+const http = require('http');
+const connect = require('connect');
+const serveStatic = require('serve-static');
+
+let httpServer; 
+
+//local host will be set up for testing purposes
+//Contents of public folder can be viewed by typing in URL
+//URL = localhost:9000
+gulp.task('http', (done) => {
+  const app = connect().use(serveStatic('public'));
+  httpServer = http.createServer(app).listen(9000, done);
 });
 
-// Compile Our Sass
+// Lint Task
+gulp.task('lint', function() {
+    return gulp.src('./assets/js/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
+});
+
+//unit test
+// Test JS
+gulp.task('unit_test', function () {
+    return gulp.src('assets/js/*.js')
+        .pipe(jasmine());
+});
+
+
+// Default Task
+gulp.task('default', ['lint','unit_test', 'http'], ()=> {
+   // httpServer.close();
+});
+
+
+/* Compile Our Sass
 gulp.task('sass', function() {
     return gulp.src('scss/*.scss')
         .pipe(sass())
@@ -39,15 +64,4 @@ gulp.task('watch', function() {
     gulp.watch('scss/*.scss', ['sass']);
 });
 
-*/ 
-
-//unit test
-// Test JS
-gulp.task('unit_test', function () {
-    return gulp.src('assets/js/*.js')
-        .pipe(jasmine());
-});
-
-
-// Default Task
-gulp.task('default', ['unit_test']);
+*/

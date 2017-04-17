@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CSE112-AlphaTeam/setup#readme",
   "devDependencies": {
+    "connect": "^3.6.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-jasmine": "^2.4.2",
@@ -24,6 +25,11 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
-    "jshint": "^2.9.4"
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "serve-static": "^1.12.1"
+  },
+  "dependencies": {
+    "gulp-logger": "0.0.2"
   }
 }
