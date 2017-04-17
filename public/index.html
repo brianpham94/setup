@@ -65,14 +65,6 @@
 
     </script>
 
-     <!--
-	<center><form id = "form1">
-  		First name: <input type="text" name="fname" id = "message"><br>
-  		<input type="button" onCLick="callF()" value="submit">
-	</form></center>
-	<p> Result Is: <span id = "display_message"></span> </p>
-    -->
-
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
@@ -84,25 +76,6 @@
         // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
         //
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-	
-	<!--
-	function callF(){
-
-	    var bar = document.getElementById("message").value;
-            if(bar === "baz"){
-	    	display_message.innerHTML= "true";	
-	    else{
-		display_message.innerHTML = "false";
-	    }
-	}
-
-
-	
-	function foo(bar){
-		return (bar === "baz");
-	}
-	-->
 
         try {
           let app = firebase.app();
