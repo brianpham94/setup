@@ -19,7 +19,6 @@ before_script:
 
 script:
   gulp
-  echo Hello, this is a test message!
 
 after_success:
   - firebase deploy --project alpha-team-84c76 --token=${FIREBASE_API_TOKEN}
