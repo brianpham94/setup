@@ -22,7 +22,7 @@ gulp.task('http', (done) => {
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('./assets/js/*.js')
+    return gulp.src('./assets/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
 });
@@ -37,7 +37,7 @@ gulp.task('unit_test', function () {
 
 // Default Task
 gulp.task('default', ['lint','unit_test', 'http'], ()=> {
-   // httpServer.close();
+    httpServer.close();
 });
 
 
