@@ -21,4 +21,4 @@ script:
   gulp
 
 after_success:
-  - firebase deploy --project alpha-team-84c76 --token=${FIREBASE_API_TOKEN}
+  - ./deploy.sh
