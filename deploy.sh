@@ -6,4 +6,4 @@ if [[ $TRAVIS_BRANCH == 'master' ]]; then
   firebase deploy --project alpha-team-84c76 --token=${FIREBASE_API_TOKEN}
   exit 0;
 fi
-echo "Not on master branch, skipping deployment to Firebase."
+echo "Not on master branch ($TRAVIS_BRANCH), skipping deployment to Firebase."
