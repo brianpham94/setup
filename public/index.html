@@ -50,16 +50,21 @@
     </center>
     <script>
 
-	function callFoo(){
+	function callFoo()
+	{
         	var input = document.getElementById("inputFoo").value;
-        	if(input === ""){
+        	if(input === "")
+		{
           		alert("Enter a string to check if it's equal to baz");
-        	} else{
+        	} 
+		else
+		{
           		alert(foo(input));
         	}
       	}
 
-        function foo(bar){
+        function foo(bar)
+	{
          	return bar === "baz";
         }
 
