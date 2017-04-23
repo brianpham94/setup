@@ -1,18 +1,26 @@
 /*
 * @method isValidEmail 
-* Takes in an email and checks whether or not it is valid
+* Takes in an string and checks whether the string is a valid formatted email
 *
 * @parameter {String} email - the email being validated
 * @return {Boolean} result - true if the email is valid, false if the email is invalid
 *
-* A valid email must be in the form [personalized_part]@[domain] 
-* where “personalized_part” is a string composed of any combination of alphanumeric characters, 
-* the symbols “!, #, $, %, &, ', *, +, -, /, =, ?, ^, _, `, {, |, }, ~”, and the “.” character
-* so long as it’s not the first or last character and does not immediately follow another “.”. 
-* The “domain” is a string composed of any combination of alphanumeric characters, “-”, and “.” 
+* A valid email must be in the form [personalized_part]@[domain] where personalized part is a string composed of any 
+* combination of alphanumeric characters, the symbols “!#$%&'*+-/=?^_`{|}~”. 
+* The domain is a string composed of any combination of alphanumeric characters, “-”, and “.”.
+* Neither the domain nor the personalized part can have a “.” as the first or last last character or two consecutive “.”. 
+* The whole message body should not exceed the length of 64 characters
+* White space at the beginning and end will be ignored
 */
 export.isValidEmail = function(email)
 {
-    var pattern = /^\w[-a-zA-Z0-9!#$%&'*+-/=?^_`{|}~.]+\w@[-a-zA-Z0-9.]+$/;
-    return pattern.test(email);
+    email = email.trim();
+    if (email.length > 64)
+    {
+      return false;
+    }
+    else
+    {
+      return email.search(/^[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/) != -1;
+    }
 };
